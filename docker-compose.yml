@@ -31,10 +31,10 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD:1234
-      MYSQL_DATABASE: simple_icecream_db
-      MYSQL_USER: appuser
-      MYSQL_PASSWORD: password
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=simple_icecream_db
+      - MYSQL_USER=appuser
+      - MYSQL_PASSWORD=password
     volumes:
       - mysql_data:/var/lib/mysql
       - ./simple_icecream_db.sql:/docker-entrypoint-initdb.d/simple_icecream_db.sql
