@@ -48,6 +48,7 @@ jobs:
           # Kill any process using port 80
           sudo fuser -k 80/tcp || true
           sleep 5
+          fi
 
       - name: Remove old images
         working-directory: ${{ env.PROJECT_PATH }}
