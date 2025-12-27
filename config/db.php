@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "1234";
-$db   = "simple_icecream_db";
+$host = getenv('DB_HOST') ?: "mysql";
+$user = getenv('DB_USER') ?: "root";
+$pass = getenv('DB_PASSWORD') ?: "1234";
+$db   = getenv('DB_NAME') ?: "simple_icecream_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
