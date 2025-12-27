@@ -46,7 +46,7 @@ jobs:
           cd "$PROJECT_PATH"
           docker compose down || true
           # Kill any process using port 80
-          sudo fuser -k 80/tcp || true
+          timeout 10 sudo fuser -k 80/tcp || true
           sleep 5
           fi
 
