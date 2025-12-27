@@ -49,7 +49,7 @@ jobs:
         working-directory: ${{ env.PROJECT_PATH }}
         run: |
           sleep 30
-          sudo docker compose ps
+          docker compose ps
 
       - name: Health check
         run: curl -f http://localhost:80 || exit 1
