@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
-$db   = "simple_icecream_db"; 
+$pass = "1234";
+$db   = "simple_icecream_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
 

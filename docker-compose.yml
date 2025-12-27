@@ -25,13 +25,13 @@ services:
       - DB_HOST=mysql
       - DB_NAME=simple_icecream_db
       - DB_USER=root
-      - DB_PASSWORD=
+      - DB_PASSWORD=1234
     networks:
       - app-network
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD:1234
       MYSQL_DATABASE: simple_icecream_db
       MYSQL_USER: appuser
       MYSQL_PASSWORD: password
@@ -46,7 +46,7 @@ services:
       - "8081:80"
     environment:
       - PMA_HOST=mysql
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=1234
     depends_on:
       - mysql
     networks:
