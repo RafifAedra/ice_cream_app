@@ -39,17 +39,6 @@ jobs:
           git fetch origin master
           git reset --hard origin/master
 
-      - name: Stop existing containers first
-        run: |
-          PROJECT_PATH=$(find /home -name 'icecream-app' -type d 2>/dev/null | head -1)
-          if [ -n "$PROJECT_PATH" ]; then
-          cd "$PROJECT_PATH"
-          docker compose down || true
-          # Kill any process using port 80
-          timeout 10 sudo fuser -k 80/tcp || true
-          sleep 5
-          fi
-
       - name: Remove old images
         working-directory: ${{ env.PROJECT_PATH }}
         run: |
